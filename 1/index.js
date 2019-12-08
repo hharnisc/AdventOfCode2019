@@ -6,9 +6,20 @@ const rl = readline.createInterface({
 })
 
 let fuel = 0
+
+const calcModule = (mass) => {
+  let curMass = Math.floor(mass / 3) - 2
+  if (curMass > 0) {
+    return curMass + calcModule(curMass)
+  }
+  return 0
+}
+
+
 rl.on('line', function(line) {
   const mass = parseInt(line, 10)
-  fuel += Math.floor(mass / 3) - 2
+  //fuel += Math.floor(mass / 3) - 2
+  fuel += calcModule(mass)
 })
 
 // end
