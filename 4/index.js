@@ -27,7 +27,6 @@ const checkNumber = (num) => {
 let count = 0
 for(let i = 372304; i <= 847060; i++) {
   if(checkNumber(i)) {
-    console.log(i)
     count += 1
   }
 }
